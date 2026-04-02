@@ -1,8 +1,8 @@
 class TreeNode:
-    def __init__(self, val = "", next = None, prev = None):
+    def __init__(self, val = ""):
         self.val = val
-        self.next = next
-        self.prev = prev
+        self.next = None
+        self.prev = None
     
 class BrowserHistory:
 
@@ -16,7 +16,7 @@ class BrowserHistory:
         self.visit(homepage)
 
     def visit(self, url: str) -> None:
-        new_node = TreeNode(url, self.rear, self.curr)
+        new_node = TreeNode(url)
         next1 = self.curr.next
         new_node.next = next1
         self.curr.next = new_node
